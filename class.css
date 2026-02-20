@@ -1,0 +1,207 @@
+body {
+    background: #24243e;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow-x: hidden; 
+}
+    
+
+
+nav {
+    margin-bottom: 50px;
+    color: aliceblue;
+    justify-content: space-between;
+    width: 95%;
+    height: 70px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    background-color: rgba(127, 118, 118, 0.299);
+    backdrop-filter: blur(10px);
+    border: solid white 1px;
+    border-radius: 15px;
+    margin-top: 10px;
+    gap: 50px;
+}
+
+
+.music-sections {
+    margin-bottom: 100px;
+    width: 95%;
+    height: 50px;
+    top: 90px; 
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: solid 1px white;
+    border-radius: 9px;
+}
+.Body__1,.Body__2,.Body__3,.Body__4 {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    justify-items: center;
+    padding: 20px;
+    margin-top: 180px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 900px) {
+    .Body {
+        grid-template-columns: 1fr; 
+        margin-top: 220px; 
+    }
+}
+
+
+[class*="audio-card__"] {
+    background-color: rgba(49, 43, 43, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 90%;      
+    max-width: 350px; 
+    height: auto;
+    border-radius: 15px;
+    width: 300px; 
+    height: auto; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+[class*="audio-card__"]:hover {
+    transform: translateY(-10px); 
+}
+
+[class*="audio-card__"] img {
+    width: 200px;       
+    height: 200px;   
+    object-fit: cover;   
+    border-radius: 12px; 
+    display: block;      
+    margin: 0 auto 15px auto; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.Body__1 {
+  margin-top: 200px;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff4e50, #ff6a00, #00c6ff, #0072ff);
+  background-size: 400% 400%;
+  animation: fireIce 10s ease infinite;
+}
+
+
+@keyframes fireIce {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.Body__3 {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  position: relative;
+}
+
+.Body__3::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: fit-content;
+  background: radial-gradient(circle, rgba(0,255,255,0.2) 10%, transparent 10%);
+  background-size: 50px 50px;
+  animation: moveNeon 20s linear infinite;
+}
+
+@keyframes moveNeon {
+  from { transform: translate(0,0); }
+  to { transform: translate(-50px,-50px); }
+}
+.button {
+  padding: 12px 25px;
+  border-radius: 8px;
+       background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: solid 1px white;
+  cursor: pointer;
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 10px #9dde75,
+                0 0 20px #b5ef7b;
+  }
+  to {
+    box-shadow: 0 0 20px #c88e9a,
+                0 0 40px #ffa0b2,
+                0 0 60px #be8d8d;
+  }
+}
+a {
+  text-decoration: none;
+}
+button a{
+    font-family: sans-serif;
+    color: antiquewhite;
+    font-size: 15px;
+}
+.Body__2 {
+  min-height: 100vh;
+  padding-top: 120px;
+  background: linear-gradient(
+    135deg,
+    #1b4332,
+    #2d6a4f,
+    #40916c,
+    #a3b18a,
+    #6c757d
+  );
+  color: #f1faee;
+}
+.Body__4 {
+  min-height: 100vh;
+  padding-top: 120px;
+  background: linear-gradient(135deg, #0a0a0a, #1a0000);
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.Body__4::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255, 0, 0, 0.15) 0px,
+    rgba(255, 0, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 40px
+  );
+  animation: bloodFlow 20s linear infinite;
+}
+
+@keyframes bloodFlow {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px,200px); }
+}
